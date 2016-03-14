@@ -1,0 +1,1 @@
+This is a text-RPG. You will encounter threats and there will be choices to make, that effect your characters future. 'Attack' command makes your character attack the enemy. Hitting the target is determined by rolling a d6 die. 1 misses, 6 lands a critical strike and the rest land a hit. 'Defend' command halves damage taken for one turn. 'Give up' command ends the game.

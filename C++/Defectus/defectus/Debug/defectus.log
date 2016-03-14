@@ -1,0 +1,47 @@
+﻿Build started 07-Feb-16 19:58:24.
+     1>Project "G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\defectus\defectus.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Veryim\Ohjelmat\Visual Studio 2015\VC\bin\CL.exe /c /I"D:\Veryim\OPISKELU\Projektit\Koodaus\C++\CHARKKA\defectus\sfml-2.3\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt block.cpp bullet.cpp character.cpp collision.cpp crosshair.cpp dig.cpp draw.cpp event.cpp game.cpp main.cpp motion.cpp zone.cpp
+         block.cpp
+         Generating Code...
+         Compiling...
+         zone.cpp
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\zone.cpp(34): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\zone.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+         motion.cpp
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\motion.cpp(117): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\motion.cpp(118): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+         main.cpp
+         game.cpp
+         event.cpp
+         draw.cpp
+         dig.cpp
+         crosshair.cpp
+         collision.cpp
+         character.cpp
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\character.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+         bullet.cpp
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\bullet.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\bullet.cpp(82): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>g:\opiskelu\projektit\koodaus\c++\charkka\defectus\bullet.cpp(83): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+       Link:
+         D:\Veryim\Ohjelmat\Visual Studio 2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\Debug\defectus.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Veryim\OPISKELU\Projektit\Koodaus\C++\CHARKKA\defectus\sfml-2.3\lib" "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\Debug\defectus.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\Debug\defectus.lib" /MACHINE:X86 Debug\block.obj
+         Debug\bullet.obj
+         Debug\character.obj
+         Debug\collision.obj
+         Debug\crosshair.obj
+         Debug\dig.obj
+         Debug\draw.obj
+         Debug\event.obj
+         Debug\file.obj
+         Debug\game.obj
+         Debug\main.obj
+         Debug\motion.obj
+         Debug\zone.obj
+         defectus.vcxproj -> G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\Debug\defectus.exe
+     1>Done Building Project "G:\OPISKELU\Projektit\Koodaus\C++\CHARKKA\defectus\defectus.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:26.49
