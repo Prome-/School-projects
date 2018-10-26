@@ -1,0 +1,7 @@
+Tiedon välitys kahden sivun välillä
+====
+Oppimistavoite: Oppia välittää tietoa eri tavoilla samassa tai eri sovelluksissa olevan webbisivujen välillä.
+Tee seuraavanlainen kaksi sivua sisältävä sovellus, jossa ensimmäisellä sivulla kysytään käyttäjän nimi
+Annettuaan nimen käyttäjä voi siirtyä (kolmella eri tavalla) sivulle valuuttamuunnin2, jossa hän voi tehdä valuuttamuunnoksen.
+Sivulla käyttäjää tervehditään kuten kuvasta näkyy.
+![Alt text](/images/vk0teht.png "kuva")

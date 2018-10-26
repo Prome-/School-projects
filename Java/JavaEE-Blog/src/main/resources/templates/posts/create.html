@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+	<title>Create post</title>
+</head>
+<body>
+<div layout:fragment="content">
+	<h1>Create new post</h1>	
+	<form method="post" action="/posts/create">
+	  <div><label for="title">Title:</label></div>
+	  <input id="title" type="text" name="title" size="50"/>
+	  <div><label for="content">Content:</label></div>
+	  <textarea id="content" name="content" rows="10" cols="70"></textarea>
+	  <div><input type="submit" value="Create"/>
+	  <a href="../index.html" th:href="@{/}">[Cancel]</a></div>
+	  <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+	</form>
+</div>
+</body>
+</html>

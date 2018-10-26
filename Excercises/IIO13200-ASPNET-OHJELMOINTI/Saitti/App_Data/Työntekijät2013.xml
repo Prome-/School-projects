@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<tyontekijat>
+  <tyontekija>
+    <etunimi>Eppu</etunimi>
+    <sukunimi>Normaali</sukunimi>
+    <numero>11</numero>
+    <tyosuhde>määräaikainen</tyosuhde>
+    <palkka>10000</palkka>
+  </tyontekija>
+  <tyontekija>
+    <etunimi>Martti</etunimi>
+    <sukunimi>Syrjä</sukunimi>
+    <numero>12</numero>
+    <tyosuhde>vakituinen</tyosuhde>
+    <palkka>2000</palkka>
+  </tyontekija>
+  <tyontekija>
+    <etunimi>Pantse</etunimi>
+    <sukunimi>Syrjä</sukunimi>
+    <numero>13</numero>
+    <tyosuhde>vakituinen</tyosuhde>
+    <palkka>2000</palkka>
+  </tyontekija>
+  <tyontekija>
+    <etunimi>Aku</etunimi>
+    <sukunimi>Syrjä</sukunimi>
+    <numero>14</numero>
+    <tyosuhde>vakituinen</tyosuhde>
+    <palkka>2000</palkka>
+  </tyontekija>
+  <tyontekija>
+    <etunimi>Juha</etunimi>
+    <sukunimi>Torvinen</sukunimi>
+    <numero>15</numero>
+    <tyosuhde>vakituinen</tyosuhde>
+    <palkka>2000</palkka>
+  </tyontekija>
+  <tyontekija>
+    <etunimi>Sami</etunimi>
+    <sukunimi>Ruusukallio</sukunimi>
+    <numero>16</numero>
+    <tyosuhde>vakituinen</tyosuhde>
+    <palkka>2000</palkka>
+  </tyontekija>
+</tyontekijat>

@@ -1,0 +1,68 @@
+﻿<Window x:Class="Harjoitus6DatabindingX3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harjoitus6DatabindingX3"
+        xmlns:props="clr-namespace:Harjoitus6DatabindingX3.Properties"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="650">
+    <Window.Resources>
+        <sys:String x:Key="myApp">Mahtisovellus V1</sys:String>
+        <x:Array x:Key="myCourses" Type="sys:String">
+            <sys:String>IIO11300 Windows ohjelmointi</sys:String>
+            <sys:String>IIZP2010 Järjestelmäprojekti</sys:String>
+            <sys:String>IIO11000 ohjelmistosuunnittelu</sys:String>
+        </x:Array>
+    </Window.Resources>
+    <Grid x:Name="myGrid">
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <!-- yksinkertainen bindaus toiseen käyttöliittymän kontrolliin-->
+            <StackPanel Background="LightBlue" Width="175">
+                <TextBox x:Name="txtTest" />
+                <!-- dynaamiseen resurssiin voidaan viitata elementin kautta-->
+                <TextBlock x:Name="txblockTesti1" Text="{Binding ElementName=txtTest, Path=Text}"/>
+                <TextBlock x:Name="txblockTesti2" Text="{Binding ElementName=txtTest, Path=Text.Length}"/>
+                <TextBlock>Alla oleva teksti tulee App.Configista</TextBlock>
+                <!-- staattiseen resurssiin viittaus käyttää source-viittausta -->
+                <TextBlock Text="{Binding Source={x:Static props:Settings.Default}, Path=Username}" />
+                <TextBlock>Sama koodilla tehtynä</TextBlock>
+                <Button x:Name="btnSetUser" Content="Näytä käyttäjä" Click="btnSetUser_Click"/>
+                <TextBlock x:Name="txtUsername" Text="[Tähän koodi iskee käyttäjänimen]" />
+
+            </StackPanel>
+            <StackPanel Background="{Binding ElementName=cmbColors, Path=SelectedItem.Content, Mode=OneWay}">
+                
+                <TextBlock>Comboboxi aasettaa stackpanelin värin</TextBlock>
+            <ComboBox x:Name="cmbColors">
+                <ComboBoxItem Content="Azure"/>
+                <ComboBoxItem Content="LightBlue"/>
+                <ComboBoxItem Content="Green"/>
+                <ComboBoxItem Content="Blue"/>
+            </ComboBox>
+            <TextBlock>Sidotaan comboboxi staattiseen resurssiin</TextBlock>
+            <TextBlock Text="{Binding Source={StaticResource myApp}}" />
+            <ComboBox x:Name="cmbCourses" ItemsSource="{Binding Source={StaticResource myCourses}}"/>
+            <TextBlock Text="{Binding ElementName=cmbCourses, Path=SelectedItem}" />
+                <ComboBox x:Name="cmbCourses2">
+                    
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Background="Aquamarine">
+                <!-- sidotaan stackpaneliin datacontekstiksi oliokokoelma-->
+                <TextBlock>Bindaus oliokokoelmaan</TextBlock>
+                <Button x:Name="btnBind" Content="Sido oliokokoelmaan" Click="btnBind_Click" />
+                <!-- esitetään olion "oletus" eli ToString -->
+                <TextBlock x:Name="txbNimi" Text="{Binding}"/>
+                <!-- seuraavat textboxit sidotaan tiettyihin propertyihin-->
+                <TextBox x:Name="txtName" Text="{Binding Path=Name}"/>
+                <TextBox x:Name="txtCity" Text="{Binding Path=City}"/>
+                <Button x:Name="btnForward" Content="Forward" Click="btnForward_Click"/>
+                <Button x:Name="btnBackward" Content="Backward" Click="btnBackward_Click"/>
+                <Button x:Name="btnShowPlayer" Content="Näytä pelaaja" Click="btnShowPlayer_Click"/>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

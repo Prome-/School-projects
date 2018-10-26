@@ -1,0 +1,53 @@
+﻿<Window x:Class="Tehtava12LINQ.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava12LINQ"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid x:Name="myGrid">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="205">
+                <StackPanel x:Name="spJobData">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tehty"/>
+                        <CheckBox x:Name="cbState" IsChecked="{Binding Path=Done, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Kuvaus"/>
+                        <TextBox x:Name="txtDescription" Text="{Binding Path=Description, Mode=TwoWay}" Width="161" Height="65"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Palautus pvm"/>
+                        <TextBox x:Name="txtDate" Text="{Binding Path=Date, Mode=TwoWay}" Width="126"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button x:Name="btnAddJob" Content="Lisää tehtävä" Click="btnAddJob_Click"/>
+                    <Button x:Name="btnDeleteJob" Content="Poista tehtävä" Click="btnDeleteJob_Click"/>
+                    <Button x:Name="btnSaveJobs" Content="Tallenna muutokset" Click="btnSaveJobs_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Etsi kuvauksella"/>
+                        <TextBox x:Name="txtSearchDescr" Width="117" TextChanged="txtSearchDescr_TextChanged"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Etsi päivämäärällä"/>
+                        <TextBox x:Name="txtSearchDate" Width="107" TextChanged="dpSearchDate_TextChanged"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="311" x:Name="spJobs">
+                <DataGrid x:Name="dgJobs" Height="292" SelectionChanged="dgJobs_SelectionChanged" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="Tehty" Binding="{Binding Done}"/>
+                        <DataGridTextColumn Header="Kuvaus"  Binding="{Binding Description}"/>
+                        <DataGridTextColumn Header="Pvm" Binding="{Binding Date}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

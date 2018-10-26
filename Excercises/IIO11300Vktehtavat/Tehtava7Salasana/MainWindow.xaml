@@ -1,0 +1,25 @@
+﻿<Window x:Class="Tehtava7Salasana.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava7Salasana"
+        mc:Ignorable="d"
+        Title="Password strength checker" Height="195" Width="350">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical">
+                <TextBlock x:Name="txtMessage" Text="Enter password:"/>
+                <PasswordBox x:Name="txtInput" PasswordChanged="txtInput_PasswordChanged"/>
+                <TextBlock x:Name="txtSymbolCount"/>
+                <TextBlock x:Name="txtUppercaseCount"/>
+                <TextBlock x:Name="txtLowercaseCount"/>
+                <TextBlock x:Name="txtNumberCount"/>
+                <TextBlock x:Name="txtSpecialCount"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Height="50">
+                <TextBlock Height="50" Background="Gray" x:Name="txtOutput" FontSize="26.667"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

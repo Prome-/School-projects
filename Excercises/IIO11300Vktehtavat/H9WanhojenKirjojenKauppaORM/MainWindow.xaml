@@ -1,0 +1,42 @@
+﻿<Window x:Class="H9WanhojenKirjojenKauppaORM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H9WanhojenKirjojenKauppaORM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"  Height="150">
+                <StackPanel Orientation="Vertical"  Width="129" Margin="5,5,5,5">
+                    <Button x:Name="btnGetBooks" Content="Hae tekstikirjat" Margin="2,2,2,2" Click="btnGetBooks_Click"/>
+                    <Button x:Name="btnGetBooksSQL" Content="Hae kirjat SQL server" Margin="2,2,2,2" Click="btnGetBooksSQL_Click"/>
+                    <ComboBox x:Name="cbFilter" Margin="2,2,2,2"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="387">                    
+                    <StackPanel Orientation="Vertical" Width="47">
+                        <TextBlock Text="Tuote" Margin="0,0,0,2"/>
+                        <TextBlock Text="Nimi" Margin="0,0,0,2"/>
+                        <TextBlock Text="Kirjailija" Margin="0,0,0,2"/>
+                        <TextBlock Text="Maa" Margin="0,0,0,2"/>
+                        <TextBlock Text="Vuosi" Margin="0,0,0,2"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spBook" Orientation="Vertical" Width="320">
+                        <TextBlock x:Name="txtProduct" Text="{Binding Path=ID, Mode=OneWay}"/>
+                        <TextBox x:Name="txtName" Text="{Binding Path=Name , Mode=OneWay}"/>
+                        <TextBox x:Name="txtAuthor" Text="{Binding Path=Author , Mode=OneWay}"/>
+                        <TextBox x:Name="txtCountry" Text="{Binding Path=Country , Mode=OneWay}"/>
+                        <TextBox x:Name="txtYear" Text="{Binding Path=Year , Mode=OneWay}"/>
+                        <Button x:Name="btnSave" Content="Tallenna" Click="btnSave_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Height="167">
+                <DataGrid x:Name="dgBooks" ItemsSource="{Binding}" Height="144" SelectionChanged="dgBooks_SelectionChanged"/>
+                <StatusBar x:Name="statusBar" Background="LightGray" Height="26" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

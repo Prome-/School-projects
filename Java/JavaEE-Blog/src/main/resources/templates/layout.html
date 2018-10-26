@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:fragment="site-head">
+	<sec:csrfMetaTags/>
+    <title>Blogi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/styles.css}" href="../public/css/styles.css" rel="stylesheet" type="text/css"/>
+    <!-- Bootstrap ja JQuery -->	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../public/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>
+</head>
+<body>
+
+	<!-- Header -->
+	<header th:fragment="site-header" th:remove="tag">
+		<header>
+		<div class="container">
+			<a href="index.html" th:href="@{/}">Home</a>	
+			<a href="posts/index.html" th:href="@{/posts}">Posts</a>
+			<a href="posts/create.html" th:href="@{/posts/create}">Create Post</a>
+			<!-- <a href="users/index.html" th:href="@{/users}">Users</a> -->
+			<div id="logged-in-info">
+				<span th:if="${session.user != null}" th:text="${session.user}"></span>
+				<span th:if="${session.user == null}">
+					<a href="users/login.html" th:href="@{/users/login}">Login</a>
+					<a href="users/register.html" th:href="@{/users/register}">Register</a>
+				</span>
+				<form th:if="${session.user != null}" method="post" th:action="@{/users/logout}">
+					<input type="submit" value="Logout"/>
+				</form>
+			</div>
+		</div>
+		</header>
+		<div class="container">
+			<ul id="messages" th:with="notifyMessages=${session[T(blog.services
+		          .NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+		      <li th:each="msg : ${notifyMessages}" th:text="${msg.text}"
+		           th:class="${#strings.toLowerCase(msg.type)}">
+		      </li>
+		      <span th:if="${notifyMessages}" th:remove="all" th:text="${session.remove(
+		          T(blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}"></span>	
+		    </ul>
+	    </div>
+	</header>
+	
+    <!-- Content -->
+	<div class="container">
+		<div layout:fragment="content"></div>
+	</div>
+	
+	<!-- Scripts -->
+	<th:block layout:fragment="scripts"></th:block>
+</body>
+</html>

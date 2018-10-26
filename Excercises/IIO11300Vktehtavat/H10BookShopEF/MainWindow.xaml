@@ -1,0 +1,65 @@
+﻿<Window x:Class="H10BookShopEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H10BookShopEF"
+        mc:Ignorable="d"
+        Title="BookShopEF" Height="350" Width="756.735">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"  Height="150">
+                <StackPanel Orientation="Vertical"  Width="129" Margin="5,5,5,5">
+                    <Button x:Name="btnGetBooks" Content="Hae kirjat EF" Margin="2,2,2,2" Click="btnGetBooks_Click"/>
+                    <Button x:Name="btnGetCustomers" Content="Hae asiakkaat EF" Margin="2,2,2,2" Click="btnGetCustomers_Click"/>
+                    <ComboBox x:Name="cbFilter" Margin="2,2,2,2" ItemsSource="{Binding}" SelectionChanged="cbFilter_SelectionChanged"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="387">
+                    <StackPanel Orientation="Vertical" Width="47">
+                        <TextBlock Text="Tuote" Margin="0,0,0,2"/>
+                        <TextBlock Text="Nimi" Margin="0,0,0,2"/>
+                        <TextBlock Text="Kirjailija" Margin="0,0,0,2"/>
+                        <TextBlock Text="Maa" Margin="0,0,0,2"/>
+                        <TextBlock Text="Vuosi" Margin="0,0,0,2"/>
+                    </StackPanel>
+                    <StackPanel x:Name="spBook" Orientation="Vertical" Width="320">
+                        <TextBlock x:Name="txtProduct" Text="{Binding Path=DisplayName, Mode=OneWay}"/>
+                        <TextBox x:Name="txtName" Text="{Binding Path=name , Mode=OneWay}"/>
+                        <TextBox x:Name="txtAuthor" Text="{Binding Path=author , Mode=OneWay}"/>
+                        <TextBox x:Name="txtCountry" Text="{Binding Path=country , Mode=OneWay}"/>
+                        <TextBox x:Name="txtYear" Text="{Binding Path=year , Mode=OneWay}"/>
+                        <Button x:Name="btnSave" Content="Tallenna"/>
+                        <Button x:Name="btnNew" Content="Add"/>
+                        <Button x:Name="btnDelete" Content="Delete"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="spCustomers" Orientation="Vertical" Width="220">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Asiakas: "/>
+                        <TextBlock Text="{Binding Path=DisplayName}" x:Name="txtCustomer"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Etunimi: "/>
+                        <TextBox x:Name="txtFname" Text="{Binding Path=firstname}" Width="119" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Sukunimi"/>
+                        <TextBox x:Name="txtLname" Text="{Binding Path=lastname}" Width="131" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Tilauksia"/>
+                        <TextBlock x:Name="txtOrders" Text="{Binding Path=OrdersCount}" Width="83" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnOrders" Content="Asiakkaan tilaukset" HorizontalAlignment="Right" Width="217" Click="btnOrders_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Height="167">
+                <DataGrid x:Name="dgBooks" ItemsSource="{Binding}" Height="144" SelectionChanged="dgBooks_SelectionChanged"/>
+                <StatusBar x:Name="statusBar" Background="LightGray" Height="26" VerticalAlignment="Bottom"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

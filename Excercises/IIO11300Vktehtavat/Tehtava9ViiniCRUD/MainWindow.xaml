@@ -1,0 +1,28 @@
+﻿<Window x:Class="Tehtava9ViiniCRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava9ViiniCRUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="555.992">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button x:Name="btnGetCustomers" Content="Hae asiakkaat" Click="btnGetCustomers_Click"/>
+            <Button x:Name="btnAddCustomer" Content="Lisää asiakas" Click="btnAddCustomer_Click"/>
+            <StackPanel Orientation="Horizontal" x:Name="spAddWorker">
+                <TextBlock Text="Etunimi:"/>
+                <TextBox x:Name="txtFirstName" Width="50" Background="Beige"/>
+                <TextBlock Text="Sukunimi:"/>
+                <TextBox x:Name="txtLastName" Width="50" Background="Beige"/>
+                <TextBlock Text="Osoite:"/>
+                <TextBox x:Name="txtAddress" Width="50" Background="Beige"/>
+                <TextBlock Text="Kaupunki:"/>
+                <TextBox x:Name="txtCity" Width="50" Background="Beige"/>
+                <Button Content="Tallenna asiakas" x:Name="btnSave" Click="btnSave_Click"/>
+            </StackPanel>
+            <Button x:Name="btnDeleteCustomer" Content="Poista asiakas" Click="btnDeleteCustomer_Click"/>
+            <DataGrid x:Name="dgCustomers" ItemsSource="{Binding}"/>
+        </StackPanel>
+    </Grid>
+</Window>

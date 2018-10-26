@@ -1,0 +1,48 @@
+﻿<Window x:Class="Tehtava4OudotOliot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava4OudotOliot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="365.412" Width="611.138">
+    <Grid>
+        
+        <StackPanel Orientation="Horizontal" Height="20" Width="300" Margin="12,15,291,291">
+            <TextBlock Text="First name" Width="100"/>
+            <TextBox Margin="0,0,0,0" Width="100" x:Name="txtFirstName"/>
+            <Button x:Name="btnCreatePlayer" Content="Create player" Margin="0,0,0,0" Width="100" Click="btnCreatePlayer_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="20" Width="300" Margin="12,40,291,266">
+            <TextBlock Text="Last name" Width="100"/>
+            <TextBox Margin="0,0,0,0" Width="100" x:Name="txtLastName"/>
+            <Button x:Name="btnUpdatePlayer" Content="Update player" Margin="0,0,0,0" Width="100" Click="btnUpdatePlayer_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="20" Width="300" Margin="12,65,291,241">
+            <TextBlock Text="Transfer Cost" Width="100"/>
+            <TextBox Margin="0,0,0,0" Width="100" x:Name="txtTransferCost"/>
+            <Button x:Name="btnDeletePlayer" Content="Delete player" Margin="0,0,0,0" Width="100" Click="btnDeletePlayer_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="20" Width="300" Margin="12,90,291,216">
+            <TextBlock Text="Team" Width="100"/>
+            <ComboBox x:Name="TeamSelector" Width="100"/>
+            <Button x:Name="btnSaveToFile" Content="Save info to txt" Margin="0,0,0,0" Width="100" Click="btnSaveToTxt_Click"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Height="20" Width="300" Margin="12,115,291,192">
+            <TextBlock Text="Face" Width="100"/>
+            <ComboBox x:Name="faceSelector" Width="100" SelectionChanged="faceSelector_SelectionChanged"/>
+            <Button x:Name="btnQuit" Content="Quit" Width="100" Click="btnQuit_Click"/>
+        </StackPanel>
+        <ListBox x:Name="playerListBox" HorizontalAlignment="Left" Height="120" Margin="40,178,0,0" VerticalAlignment="Top" Width="253" SelectionChanged="playerListBox_SelectionChanged"/>
+        <StatusBar Margin="0,303,0,0">
+            <StatusBarItem>
+                <TextBlock Name="statusBarText"/>
+            </StatusBarItem>
+
+        </StatusBar>
+        <Image x:Name="imageViewer" HorizontalAlignment="Left" Height="258" Margin="367,24,0,0" VerticalAlignment="Top" Width="208"/>
+        <Button x:Name="loadData" Content="Load from file" HorizontalAlignment="Left" Margin="206,144,0,0" VerticalAlignment="Top" Width="87" Click="loadData_Click"/>
+        <Button x:Name="btnSaveToXML" Content="Save objects to xml" HorizontalAlignment="Left" Margin="50,144,0,0" VerticalAlignment="Top" Width="128" Click="btnSaveToXML_Click"/>
+    </Grid>
+</Window>

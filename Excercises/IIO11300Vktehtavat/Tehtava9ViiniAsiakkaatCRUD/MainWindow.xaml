@@ -1,0 +1,33 @@
+﻿<Window x:Class="Tehtava9ViiniAsiakkaatCRUD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava9ViiniAsiakkaatCRUD"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Vertical" x:Name="myPanel">
+            <Button x:Name="btnGetCustomers" Content="Hae asiakkaat" Click="btnGetCustomers_Click"/>
+            <Button x:Name="btnAddCustomer" Content="Lisää asiakas" Click="btnAddCustomer_Click"/>
+            <StackPanel x:Name="spCustomerDataView" Orientation="Horizontal" Visibility="Collapsed"  >
+                <TextBlock FontSize="10" Text="Etunimi:" HorizontalAlignment="Left"/>
+                <TextBox x:Name="txtFirstName" Width="50" Text="{Binding Path=firstname}"/>
+                <TextBlock FontSize="10" Text="Sukunimi:"/>
+                <TextBox x:Name="txtLastName" Width="50" Text="{Binding Path=lastname}"/>
+                <TextBlock FontSize="10" Text="Osoite:"/>
+                <TextBox x:Name="txtAddress" Width="50" Text="{Binding Path=address}"/>
+                <TextBlock FontSize="10" Text="ZIP:"/>
+                <TextBox x:Name="txtZIP" Width="50" Text="{Binding Path=ZIP}"/>
+                <TextBlock FontSize="10" Text="Kaupunki:"/>
+                <TextBox x:Name="txtCity" Width="50" Text="{Binding Path=city}"/>
+                
+                <Button x:Name="btnInsertCustomer" Width="53" Content="Lisää" Click="btnInsertCustomer_Click" />
+            </StackPanel>            
+            <Button x:Name="btnDeleteCustomer" Content="Poista asiakas" Click="btnDeleteCustomer_Click" />
+            <Button x:Name="btnSaveChanges" Content="Tallenna muutokset" Click="btnSaveChanges_Click" />
+            <DataGrid x:Name="dgCustomers" ItemsSource="{Binding}" ScrollViewer.CanContentScroll="True"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible" Height="240"/>
+        </StackPanel>            
+    </Grid>
+</Window>

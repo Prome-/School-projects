@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>IIO13200</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="http://www.w3schools.com/lib/w3.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <img src="Images/The_School_of_Athens.jpg" />
+            <br />
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th><a href="Index.aspx">Main page</a></th>
+                    <th><asp:ContentPlaceHolder ID="footer" runat="server"></asp:ContentPlaceHolder></th>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

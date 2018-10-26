@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+	<title>Posts</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<main id="posts">
+		<h1>All posts</h1>
+		<hr />
+		    <article th:each="p : ${allPosts}">
+		      <h2 class="title" th:text="${p.title}">Post title</h2>
+		      <div class="date">
+		        <i>Posted on</i>
+		        <span th:text="${#dates.format(p.date, 'dd-MMM-yyyy')}">Post date</span>
+		        <span th:if="${p.author}" th:remove="tag">
+		          <i>by</i>
+		          <span th:text="${p.author.fullName != null ? p.author.fullName : p.author.username}">Post author</span>
+		        </span>
+		      </div>
+		      <p class="content" th:utext="${p.body}">Post content</p>
+		      <span th:if="${session.user == p.author.username}">
+					<a href="#" th:text="[Edit]" th:href="@{/posts/edit/{id}/(id=${p.id})}">Edit link</a>
+					<a href="#" th:text="[Delete]" th:href="@{/posts/delete/{id}/(id=${p.id})}">Delete link</a>
+			  </span>
+			  <hr />
+		    </article>
+		</main>		
+	</div>
+	<th:block layout:fragment="scripts">
+	</th:block>
+</body>
+</html>

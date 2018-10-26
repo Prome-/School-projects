@@ -1,0 +1,16 @@
+---
+phases:
+  install:
+    commands:
+      - "npm install"
+  build:
+    commands: 
+      - "echo Build started on `date`"
+      - "npm test"
+  post_build:
+    commands: 
+      - "echo Build completed on `date`"
+artifacts:
+  files:
+    - '**/*'
+version: 0.1

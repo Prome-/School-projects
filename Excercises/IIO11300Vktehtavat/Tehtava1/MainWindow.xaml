@@ -1,0 +1,51 @@
+﻿<Window x:Class="Tehtava1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tehtava1"
+        mc:Ignorable="d"
+        Title="Oy K-S Windows Ab" Height="350" Width="639.041" FontSize="18">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Width="293">
+                <StackPanel>
+                    <Button x:Name="btnClose" Content="Sulje" Height="32" Width="180" Click="btnClose_Click" Margin="10,10,10,0"/>
+                    <Button x:Name="btnCalculate" Content="Laske pinta-ala ja piiri" Height="32" Width="180" Click="btnCalculate_Click" Margin="10,10,10,0"/>
+                    <Button x:Name="btn" Content="Button" Click="btn_Click"/>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <TextBlock Margin="10,10" Text="Ikkunan pinta-ala" Width="144"/>
+                        <TextBlock x:Name="Ikkuna_ala" TextWrapping="Wrap" Margin="10,10" Text="n/a"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10,10" Text="Karmien pinta-ala" Width="144"/>
+                        <TextBlock x:Name="Karmi_piiri" TextWrapping="Wrap" Margin="10,10" Text="n/a"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10,10" Text="Karmien piiri" Width="144"/>
+                        <TextBlock x:Name="Karmi_ala" TextWrapping="Wrap" Margin="10,10" Text="n/a"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="338">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="tbWidht" Height="28" Margin="10,10,10,10" Width="168" ><Run Text="Ikkunan leveys"/><Run Text=" (mm)"/></TextBlock>
+                    <TextBox x:Name="txtWidht" Text="1200" Height="28" Width="121" Margin="10,10,10,10" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="tbHeight" Height="28" Margin="10,10,10,10"><Run Text="Ikkunan korkeus"/><Run Text=" "/><Run Text="(mm)"/></TextBlock>
+                    <TextBox x:Name="txtHeight" Height="28" Width="114" TextWrapping="Wrap" Text="900" Margin="10,10,10,10"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="tbKarmi" Height="28" Margin="10,10,10,10"><Run Text="Karmin leveys"/><Run Text=" "/><Run Text="(mm)"/></TextBlock>
+                    <TextBox  x:Name="txtKarmi" Height="28" Width="136" TextWrapping="Wrap" Text="45" Margin="10,10,10,10"/>
+                </StackPanel>
+                
+               
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

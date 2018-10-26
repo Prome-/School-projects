@@ -1,0 +1,88 @@
+.recentPosts {
+  float: right;
+  width: 300px;
+  background: #CCC;
+  padding: 15px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.recentPosts h2 {
+  margin: 5px 0px 15px 0px;
+}
+
+.recentPosts a {
+  display: block;
+  margin: 5px 0px;
+  text-decoration: none;
+}
+
+.recentPosts:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+body>header {
+	background: #eee;
+	padding: 10px;
+}
+
+body>header a {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0px 5px;
+	font-size: 1.2em;
+}
+
+body>footer {
+	background: #eee;
+	padding: 5px;
+	margin: 10px 0;
+	text-align: center;
+}
+
+#logged-in-info {
+	float: right;
+}
+
+#logged-in-info form {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+ul#messages {
+    padding: 0;
+    list-style-type: none;
+}
+
+ul#messages li {
+	display: block;
+	width: 100%;
+	margin: 5px auto;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+ul#messages li.info {
+	background: #7f7;
+}
+
+ul#messages li.error {
+	background: #d00;
+	color: white;
+}
+
+.formError {
+    color: red;
+    font-style: italic;
+}
+
+form {
+    display: inline-block;
+}
+
+#posts .content {
+	margin-top: 10px;
+}

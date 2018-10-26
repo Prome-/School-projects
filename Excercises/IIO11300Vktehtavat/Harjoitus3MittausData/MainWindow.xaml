@@ -1,0 +1,49 @@
+﻿<Window x:Class="Harjoitus3MittausData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Harjoitus3MittausData"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="Data Input">
+                <Grid Background="#FFE5E5E5">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Tänään on: "/>
+                            <TextBlock x:Name="txtToday"/>
+                            <TextBlock Margin="10,0,0,0" Text="Tiedostonimi: "/>
+                            <TextBox x:Name="txtFileName" Text="D:\temp\testi.txt"/>
+                            <Button x:Name="btnSaveToFile" Margin="10,0,0,0" Content="Save to file" Click="btnSaveToFile_Click"/>
+                            <Button x:Name="btnLoadFromFile" Margin="10,0,0,0" Content="Read from file" Click="btnLoadFromFile_Click"/>
+                            <Button x:Name="btnSaveToXML" Margin="10,0,0,0" Content="Save to XML" Click="btnSaveToXML_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="klo: "/>
+                            <TextBox x:Name="txtClock" Width="50"/>
+                            <TextBlock Margin="10,0,0,0" Text="Mittaustulos: "/>
+                            <TextBox x:Name="txtData" Width="50"/>
+                            <Button Margin="10,0,0,0" x:Name="btnSaveData" Content="New data" Click="btnSaveData_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ListBox x:Name="lbData"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Reports">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
